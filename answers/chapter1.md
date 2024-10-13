@@ -160,3 +160,63 @@ int main() {
     return 0;
 }
 ```
+
+#### 1.4.4节练习
+
+1.17
+
+如果所有值都相等，那么一直等到输入结束，会输出这个值的次数。如果没有重复值，会把每个值都输出一边
+
+1.19
+
+```c++
+#include <iostream>
+
+int main() {
+    int v1 = 0, v2 = 0;
+    std::cout << "enter two numbers: " << std::endl;
+    std::cin >> v1 >> v2;
+    int tmp1 = v1, tmp2 = v2;
+    if (tmp1 >= tmp2){
+        while (tmp1 >= tmp2){
+            std::cout << tmp2 << std::endl;
+            ++tmp2;
+        }
+    }
+    else {
+        tmp2 = v2;
+        while (tmp1 <= tmp2){
+            std::cout << tmp1 << std::endl;
+            ++tmp1;
+        }
+    }
+    return 0;
+}
+```
+
+#### 1.5.2节练习
+
+1.23
+
+```c++
+#include <iostream>
+#include "Sales_item.h"
+int main() {
+    Sales_item val, currVal;
+    int cnt = 0;
+    if (std::cin >> currVal) {
+        cnt = 1;
+        while (std::cin >> val){
+            if (val.isbn() == currVal.isbn())
+                ++cnt;
+            else {
+                std::cout << currVal.isbn() << " have " << cnt << std::endl;
+                cnt = 1;
+                currVal = val;
+            }
+        }
+        std::cout << currVal.isbn() << " have " << cnt << std::endl;
+    }
+    return 0;
+}
+```
