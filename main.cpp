@@ -1,6 +1,8 @@
 #include <iostream>
-
+std::string global_str;
+int global_int;
 int main() {
-    std::cout << "\x32\x4d\n" << std::endl;
-    std::cout << "\t\x4d\n" << std::endl;
+    int local_int;
+    std::string local_str;
+    std::cout << global_str << " " << global_int << ' ' << local_int << ' ' << local_str;
 }
