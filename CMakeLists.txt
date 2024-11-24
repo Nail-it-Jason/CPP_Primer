@@ -4,4 +4,5 @@ project(CPP_Primer)
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(CPP_Primer main.cpp
-        Sales_item.h)
+        Sales_item.h
+)
