@@ -1,4 +1,4 @@
-#### 2.1节练习
+#### 2练习
 
 2.3-2.4
 
@@ -189,3 +189,75 @@ p的值大于0
 (e) 同d
 
 (f) ic的值不能被修改
+
+2.30
+
+```c++
+const int v2 = 0; //底层const
+int v1 = v2;
+int *p1 = &v1, &r1 = v1;
+const int *p2 = &v2, *const p3 = &i, &r2 = v2; //底层const;顶层const
+```
+
+2.31
+
+```c++
+r1 = v2; //合法，顶层const不受影响
+p1 = p2; //不合法，底层const不匹配
+p2 = p1; //合法
+p1 = p3; //不合法，底层const不匹配
+p2 = p3; //合法
+```
+
+2.32
+
+不合法
+
+```c++
+int null = 0, *p = &null;
+```
+
+2.33
+
+前三个可以，后三个不行
+
+2.35
+
+```c++
+const int i = 42;
+auto j = i; const auto &k = i; auto *p = &i;
+const auto j2 = i, &k2 = i;
+```
+
+j的类型是int，k的类型是const引用，p的类型是指向const int的指针，j2类型是const int，k2类型是const引用
+
+2.36
+
+```c++
+int a = 3, b = 4;
+decltype(a) c = a; //c是int，值为3
+decltype((b)) d = a; //d是int& 值为3
+++c; //c+1变为4
+++d; //d和a都变为4
+```
+
+2.37
+
+赋值是会产生引用的一类典型表达式
+
+```c++
+int a = 3, b = 4;
+decltype(a) c = a; //c是int，值为3
+decltype(a = b) d = a; //d是int&, 值为3
+```
+
+2.38
+
+auto丢弃顶层const，需要指明const才可以补充顶层const。对指针和引用来说会保留底层const。auto顺着引用找到原始对象的类型
+
+decltype会保留引用类型，而且会把一些指针解引用，赋值，加括号等表达式理解为引用类型，decltype还会保留顶层const
+
+2.39
+
+error: expected ';' after struct definition
+

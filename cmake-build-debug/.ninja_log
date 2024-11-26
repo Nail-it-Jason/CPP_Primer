@@ -1,6 +1,4 @@
 # ninja log v5
-3	216	7541356905122012	CMakeFiles/CPP_Primer.dir/main.cpp.obj	8aa5dcea219d64f2
-216	307	7541356906001628	CPP_Primer.exe	a17012ec5bf1a549
-10	87	7541356903831067	CMakeFiles/CPP_Primer.dir/file_1.cpp.obj	2b8bb55f07cd26
 3	207	7541357737282841	CMakeFiles/CPP_Primer.dir/main.cpp.obj	8aa5dcea219d64f2
 207	300	7541357738187187	CPP_Primer.exe	a17012ec5bf1a549
+10	87	7541356903831067	CMakeFiles/CPP_Primer.dir/file_1.cpp.obj	2b8bb55f07cd26
